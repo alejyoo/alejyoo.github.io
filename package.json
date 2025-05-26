@@ -6,7 +6,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "biome format --write",
+    "prepare": "husky",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
@@ -18,6 +21,13 @@
     "@alejyoo000/rules": "^1.0.1",
     "@biomejs/biome": "^1.9.4",
     "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1"
+    "@commitlint/config-conventional": "^19.8.1",
+    "lint-staged": "^16.0.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+      "biome format --write",
+      "biome lint --write --no-errors-on-unmatched"
+    ]
   }
 }
