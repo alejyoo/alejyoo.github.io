@@ -1,0 +1,31 @@
+---
+import { SEO } from "astro-seo";
+---
+
+<html>
+  <head>
+    <SEO
+      charset="utf-8"
+      title="Alejandro – Dev"
+      extend={{
+        link: [
+          { rel: "icon", href: "/favicon.svg" },
+          { rel: "sitemap", href: "/sitemap-index.xml" },
+        ],
+        meta: [
+          { name: "viewport", content: "width=device-width, initial-scale=1" },
+          { name: "generator", content: Astro.generator },
+          { property: "og:image", content: "/opengraph-image.png" },
+          { property: "og:image:type", content: "image/png" },
+          { property: "og:image:width", content: "1200" },
+          { property: "og:image:height", content: "630" },
+          { name: "twitter:card", content: "summary_large_image" },
+          { name: "twitter:image", content: "/opengraph-image.png" },
+        ],
+      }}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
