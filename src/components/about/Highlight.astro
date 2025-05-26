@@ -1,0 +1,7 @@
+---
+const { color = "bg-red-200" } = Astro.props;
+---
+
+<mark class={`${color} rounded sm:px-1 font-semibold`}>
+  <slot />
+</mark>
