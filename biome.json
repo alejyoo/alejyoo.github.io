@@ -1,0 +1,5 @@
+{
+  "extend": [
+    "@alejyoo/rules/biome"
+  ]
+}

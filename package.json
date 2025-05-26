@@ -1,0 +1,21 @@
+{
+  "name": "alejyoo-github-io",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.8.0",
+    "astro-seo": "^0.8.4"
+  },
+  "devDependencies": {
+    "@alejyoo000/rules": "^1.0.1",
+    "@biomejs/biome": "^1.9.4",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1"
+  }
+}
