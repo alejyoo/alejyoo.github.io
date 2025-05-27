@@ -1,0 +1,27 @@
+---
+import ProjectCard from "@/components/projects/Card.astro";
+import SectionDivider from "@/components/projects/Divider.astro";
+import { getTopProjects } from "@/utils";
+
+const projects = await getTopProjects();
+---
+
+<section class="mt-16 mb-16 border-t border-gray-300 pt-16">
+  <h2 class="mb-12 text-3xl font-extrabold tracking-wide text-gray-800">
+    Projects
+  </h2>
+
+  {
+    projects.map((project, index) => (
+      <>
+        <div class="flex flex-col md:flex-row items-start mb-16">
+          <div class="md:w-1/2" />
+          <div class="w-full md:w-1/2">
+            <ProjectCard {...project} />
+          </div>
+        </div>
+        {index < projects.length - 1 && <SectionDivider />}
+      </>
+    ))
+  }
+</section>
