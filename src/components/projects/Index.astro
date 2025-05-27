@@ -1,9 +1,25 @@
 ---
-import ProjectCard from "@/components/projects/Card.astro";
-import SectionDivider from "@/components/projects/Divider.astro";
-import { getTopProjects } from "@/utils";
+import ProjectCard from '@/components/projects/Card.astro'
+import SectionDivider from '@/components/projects/Divider.astro'
+import { getTopProjects } from '@/utils'
 
-const projects = await getTopProjects();
+const projects = [
+  {
+    title: 'MERIDA',
+    description: '🕵️ Secure platform for anonymous file sharing. ',
+    link: 'https://github.com/alejyoo/merida',
+    image: 'https://opengraph.githubassets.com/1/alejyoo/merida',
+    alt: 'merida app screenshot'
+  },
+  {
+    title: 'ALEJYOO.GITHUB.IO',
+    description: '🎲 Personal site',
+    link: 'https://github.com/alejyoo/alejyoo.github.io',
+    image:
+      'https://raw.githubusercontent.com/alejyoo/alejyoo.github.io/master/assets/cover-preview.png',
+    alt: 'alejyoo.github.io app screenshot'
+  }
+]
 ---
 
 <section class="mt-16 mb-16 border-t border-gray-300 pt-16">
