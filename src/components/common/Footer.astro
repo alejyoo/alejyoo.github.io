@@ -45,8 +45,37 @@ import SunMoon from '@components/SunMoon.astro'
       type="button"
       class="hidden sm:inline transition hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-400"
       aria-label="Switch between light and dark theme"
+      id="theme-switch"
     >
       Switch theme
     </button>
   </div>
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const $button = document.getElementById("theme-switch") as HTMLElement;
+    const $html = document.documentElement;
+
+    $button.addEventListener("click", function () {
+      const currentTheme =
+        $html.getAttribute("data-theme") ||
+        localStorage.getItem("theme") ||
+        (window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+      $html.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+    });
+
+    const savedTheme = localStorage.getItem("theme");
+    const systemTheme =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    $html.setAttribute("data-theme", savedTheme || systemTheme);
+  });
+</script>
