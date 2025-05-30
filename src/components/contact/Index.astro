@@ -1,0 +1,43 @@
+---
+import Social from './Social.astro'
+---
+
+<section
+  aria-labelledby="contact-title"
+  class="mt-16 mb-16 border-t border-gray-300 pt-16"
+>
+  <header>
+    <h1 id="contact-title" class="text-3xl font-extrabold text-gray-800">
+      Contact
+    </h1>
+  </header>
+
+  <p class="text-lg text-gray-600 mt-6 mb-6">
+    If you're working on something you're excited about and think I can
+    contribute, write to me. I'm available and eager to work on worthwhile
+    projects.
+  </p>
+
+  <address class="grid grid-cols-1 md:grid-cols-2 gap-4 not-italic">
+    <Social
+      label="Email"
+      href="mailto:alej.aranda000@gmail.com"
+      display="alej.aranda000@gmail.com"
+    />
+    <Social
+      label="X/Twitter"
+      href="https://x.com/alejyoo"
+      display="@alejyoo"
+    />
+    <Social
+      label="GitHub"
+      href="https://github.com/alejyoo"
+      display="git/alejyoo"
+    />
+    <Social
+      label="Discord"
+      href="https://discord.com"
+      display="@ar.alejandro"
+    />
+  </address>
+</section>

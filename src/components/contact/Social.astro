@@ -1,0 +1,8 @@
+---
+const { label, href, display } = Astro.props
+---
+
+<div>
+  <h2 class="text-xl font-semibold tracking-tight">{label}</h2>
+  <a class="text-gray-700" href={href}>{display}</a>
+</div>
