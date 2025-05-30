@@ -26,7 +26,7 @@
     "lint-staged": "^16.0.0"
   },
   "lint-staged": {
-    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,astro,css}": [
       "biome format --write",
       "biome lint --write --no-errors-on-unmatched"
     ]
