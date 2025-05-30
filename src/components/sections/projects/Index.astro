@@ -1,0 +1,27 @@
+---
+import SectionDivider from '@sections/projects/Divider.astro'
+import Card from '@sections/projects/Card.astro'
+import Subtitle from '@ui/Subtitle.astro'
+import { getTopProjects } from '@/utils'
+
+const projects = await getTopProjects()
+---
+
+
+<section >
+  <Subtitle>Projects</Subtitle>
+
+  {
+    projects.map((project, index) => (
+      <>
+        <div class="flex flex-col md:flex-row items-start mb-16 mt-8">
+          <div class="md:w-1/2" />
+          <div class="w-full md:w-1/2">
+            <Card {...project} />
+          </div>
+        </div>
+        {index < projects.length - 1 && <SectionDivider />}
+      </S>
+    ))
+  }
+</section>
