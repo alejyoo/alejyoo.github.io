@@ -1,13 +1,14 @@
 ---
 import { SEO } from 'astro-seo'
 import '@styles/global.css'
+const { title = 'Alejandro – Dev' } = Astro.props
 ---
 
 <html lang="en">
   <head>
     <SEO
       charset="utf-8"
-      title="Alejandro – Dev"
+      title={title}
       extend={{
         link: [
           { rel: "icon", href: "/favicon.svg" },
