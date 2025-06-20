@@ -3,9 +3,9 @@ const { label, href, display } = Astro.props
 ---
 
 <div>
-  <h2 class="text-xl font-semibold tracking-tight">{label}</h2>
+  <h2 class="text-xl font-semibold tracking-tight text-gray-800 dark:text-gray-300">{label}</h2>
   <a
-    class="text-gray-700 hover:text-blue-400"
+    class="text-gray-700 hover:text-blue-400 dark:text-gray-400 transition-colors"
     href={href}
     target="_blank"
     rel="noopener noreferrer">{display}</a
