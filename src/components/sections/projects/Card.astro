@@ -20,7 +20,16 @@ const { title, description, link, image, alt } = Astro.props
   <p class="mt-1 text-sm text-gray-500 max-w-md dark:text-gray-400">
     {description}
   </p>
-  <figure class="mt-4 overflow-hidden rounded-xl shadow-md">
-    <img src={image} alt={alt} class="w-full object-cover" />
-  </figure>
+  <a
+    href={link}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="mt-4 group block overflow-hidden rounded-lg shadow-sm transition-transform duration-200 ease-in-out hover:scale-[0.99] active:scale-[0.97]"
+  >
+    <img
+      src={image}
+      alt={alt}
+      class="w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
+    />
+  </a>
 </article>
