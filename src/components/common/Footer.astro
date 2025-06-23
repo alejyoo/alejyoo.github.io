@@ -37,47 +37,43 @@ import SunMoon from '@ui/SunMoon.astro'
 
     <span class="hidden sm:inline" aria-hidden="true">·</span>
 
-    <div
-      class="block sm:hidden transition-transform hover:rotate-12 hover:text-gray-800 duration-300 dark:hover:text-gray-200"
-    >
-      <SunMoon />
-    </div>
+    <SunMoon />
 
     <button
       type="button"
-      class="hidden sm:inline transition hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-400"
       aria-label="Switch between light and dark theme"
-      id="theme-switch"
+      class="theme-switch hidden sm:inline transition hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-400"
     >
       Switch theme
     </button>
   </div>
 </footer>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const $button = document.getElementById("theme-switch") as HTMLElement;
+  document.addEventListener("DOMContentLoaded", () => {
     const $html = document.documentElement;
 
-    $button.addEventListener("click", function () {
-      const currentTheme =
-        $html.getAttribute("data-theme") ||
-        localStorage.getItem("theme") ||
-        (window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light");
-      const newTheme = currentTheme === "dark" ? "light" : "dark";
-
-      $html.setAttribute("data-theme", newTheme);
-      localStorage.setItem("theme", newTheme);
-    });
-
     const savedTheme = localStorage.getItem("theme");
-    const systemTheme =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-    $html.setAttribute("data-theme", savedTheme || systemTheme);
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
+    const initialTheme = savedTheme || systemTheme;
+    $html.setAttribute("data-theme", initialTheme);
+
+    const $buttons = document.querySelectorAll(".theme-switch");
+
+    $buttons.forEach(($btn) => {
+      $btn.addEventListener("click", () => {
+        const currentTheme =
+          $html.getAttribute("data-theme") ||
+          localStorage.getItem("theme") ||
+          systemTheme;
+
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+        $html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      });
+    });
   });
 </script>
