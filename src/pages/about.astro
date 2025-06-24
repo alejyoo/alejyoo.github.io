@@ -1,12 +1,76 @@
 ---
-import AboutSection from '@sections/about/Index.astro'
-import Navbar from '@components/common/Navbar.astro'
 import Footer from '@components/common/Footer.astro'
 import Layout from '@/layout.astro'
 ---
 
 <Layout title="About – Alejandro Aranda">
-  <Navbar />
-  <AboutSection />
-  <Footer />
+  <main class="text-gray-800 dark:text-gray-200">
+    <header class="py-4">
+      <a
+        href="/"
+        class="inline-block hover:scale-105 font-semibold text-gray-800 hover:text-blue-500 transition-colors dark:text-gray-200 dark:hover:text-blue-400"
+      >
+        ↖ Home
+      </a>
+    </header>
+
+    <section aria-label="Introduction" class="mb-12">
+      <p>
+        Hi, I'm Alejandro, a self-taught developer living in Santiago, Chile. I
+        spend most of my time creating, learning, and sharing things that
+        interest me. I'm especially drawn to simple, practical tools and the
+        simplicity behind good ideas.
+      </p>
+      <figure class="flex justify-center my-8">
+        <img
+          src="/snazzy-image.png"
+          alt="Mapa de Santiago"
+          class="w-full max-w-full h-auto rounded-2xl shadow-lg"
+        />
+      </figure>
+    </section>
+
+    <section aria-label="More about me" class="py-6 space-y-12">
+      <article>
+        <h2 class="text-xl font-semibold mb-2">🧠 In the lab</h2>
+        <p class="text-base leading-relaxed">
+          I started programming by watching countless YouTube tutorials. My
+          first computer couldn’t run VSCode, so I used Atom to learn HTML and
+          CSS basics. Soon, I shifted focus to JavaScript and Python, especially
+          backend development with Node.js.
+        </p>
+        <p class="mt-4 italic">
+          My first computer was the one the government gave away.
+        </p>
+        <hr class="mt-6 border-gray-400/30 dark:border-gray-500/30" />
+      </article>
+
+      <article>
+        <h2 class="text-xl font-semibold mb-2">💻 My workspace</h2>
+        <p class="text-base leading-relaxed">
+          I code primarily on my Windows laptop using WSL and Visual Studio Code
+          loaded with extensions that boost productivity. I also rely heavily on
+          AI tools to handle repetitive tasks, helping me write code faster and
+          focus on solving complex problems.
+        </p>
+        <hr class="mt-6 border-gray-400/30 dark:border-gray-500/30" />
+      </article>
+
+      <article>
+        <h2 class="text-xl font-semibold mb-2">🎨 Outside the code</h2>
+        <p class="text-base leading-relaxed">
+          Outside of coding, I’m committed to my education and doing well in
+          school. Whenever I have free time, I dedicate myself to learning and
+          practicing programming.
+        </p>
+        <p class="mt-4 text-base leading-relaxed">
+          In my free time, I enjoy hanging out with friends and playing sports
+          like table tennis, soccer, or whatever activity is available to stay
+          active and have fun.
+        </p>
+      </article>
+    </section>
+
+    <Footer />
+  </main>
 </Layout>
